@@ -31,6 +31,7 @@ for _, it in pairs {
     "nutrients-from-bioflux",
     "nutrients-from-yumako-mash",
     "agricultural-science-pack",
+    "efficiency-module-3",
 } do
     data.raw["recipe"][it].hidden = true
 end
@@ -48,11 +49,11 @@ for _, it in pairs {
     "agricultural-tower",
     "heating-tower",
     "carbon-fiber",
-    "efficiency-module-3",
 } do
     data.raw["item"][it].hidden = true
     data.raw["recipe"][it].hidden = true
 end
+data.raw["module"]["efficiency-module-3"].hidden = true
 
 -- Tiles
 for _, it in pairs {

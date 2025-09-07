@@ -1,5 +1,6 @@
 require("disable-space-age.lib")
 require("disable-space-age.gleba")
+require("disable-space-age.aquilo")
 
 -- local science_to_remove = {
 --     ["agricultural-science-pack"] = true,
@@ -21,6 +22,9 @@ data.raw["capsule"]["jelly"].hidden = false  -- Maraxsis
 data.raw["item"]["biochamber"].hidden = false  -- Maraxsis, TODO recipe
 data.raw["recipe"]["biolubricant"].hidden = false  -- Maraxsis
 
+
+data.raw["technology"]["dry-ice"].hidden = true
+data.raw["technology"]["lithium-battery"].prerequisites = {"battlefield-science-pack"}
 
 -- TODO: move elsewhere
 -- plastic-bar-productivity

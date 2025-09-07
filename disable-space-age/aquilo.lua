@@ -24,6 +24,7 @@ for _, it in pairs {
     "ammonia-rocket-fuel",
     "fluoroketone",
     "fluoroketone-cooling",
+    "cryogenic-science-pack",
 } do
     data.raw["recipe"][it].hidden = true
 end
@@ -84,18 +85,6 @@ end
 -- Props
 data.raw["simple-entity"]["lithium-iceberg-big"].hidden = true
 data.raw["simple-entity"]["lithium-iceberg-huge"].hidden = true
-
--- Modded tech as well
-for _, it in pairs {
-} do
-    data.raw["technology"][it].hidden = true
-end
-
--- -- Remove enemy settings in the menu
--- data.raw["noise-expression"]["gleba_enemy_base_radius"] = nil
--- data.raw["noise-expression"]["gleba_enemy_base_frequency"] = nil
--- data.raw["autoplace-control"]["gleba_enemy_base"] = nil
--- data.raw["planet"]["gleba"].map_gen_settings.autoplace_controls.gleba_enemy_base = nil
 
 -- Remove the planet!
 data.raw["resource"]["lithium-brine"].hidden = true

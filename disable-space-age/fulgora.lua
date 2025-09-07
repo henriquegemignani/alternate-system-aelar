@@ -14,6 +14,7 @@ for _, it in pairs {
     "scrap-recycling",
     "holmium-solution",
     "mech-armor",
+    "electromagnetic-science-pack",
 } do
     data.raw["recipe"][it].hidden = true
 end
@@ -86,12 +87,7 @@ for _, it in pairs {
     data.raw["technology"][it].hidden = true
 end
 
--- Modded tech as well
-for _, it in pairs {
-} do
-    data.raw["technology"][it].hidden = true
-end
-
+-- Modded tech as 
 -- -- Remove enemy settings in the menu
 -- data.raw["noise-expression"]["gleba_enemy_base_radius"] = nil
 -- data.raw["noise-expression"]["gleba_enemy_base_frequency"] = nil

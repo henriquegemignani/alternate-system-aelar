@@ -33,3 +33,7 @@ lib.replace_science_packs("muluna-satellite-radar", {
     ["metallurgic-science-pack"] = "battlefield-science-pack",
     ["electromagnetic-science-pack"] = "electrochemical-science-pack",
 })
+
+-- Needs platinum and uranium
+lib.replace_science_pack("crusher-2", "metallurgic-science-pack", "electrochemical-science-pack")
+lib.add_science_pack_cost("crusher-2", "battlefield-science-pack")

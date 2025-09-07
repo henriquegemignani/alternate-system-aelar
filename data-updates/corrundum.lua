@@ -1,11 +1,11 @@
 
+local lib = require("lib")
+
+-- Re-enable the used Vulcanus tile
+data.raw["tile"]["volcanic-ash-soil"].hidden = false
+
 data.raw["technology"]["planet-discovery-corrundum"].prerequisites = {"asteroid-collector"}
-data.raw["technology"]["planet-discovery-corrundum"].unit.ingredients = {
-    {"automation-science-pack", 1},
-    {"logistic-science-pack", 1},
-    {"chemical-science-pack", 1},
-    {"space-science-pack", 1},
-}
+lib.remove_science_pack_cost("planet-discovery-corrundum", "metallurgic-science-pack")
 
 data.raw["item"]["lightning-rod"].hidden = false
 data.raw["recipe"]["lightning-rod"].hidden = false
@@ -21,10 +21,8 @@ data.raw["technology"]["dry-ice"].hidden = true
 
 -- TODO: take recycler back
 
-local lib = require("lib")
 lib.replace_science_pack("lightning-collector", "electromagnetic-science-pack", "electrochemical-science-pack")
 -- TODO: change recipe
-
 
 lib.replace_science_pack("rocket-part-productivity-vulcanus", "metallurgic-science-pack", "electrochemical-science-pack")
 lib.replace_science_pack("rocket-part-productivity-vulcanus-2", "metallurgic-science-pack", "electrochemical-science-pack")

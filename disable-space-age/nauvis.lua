@@ -110,6 +110,7 @@ data.raw["ammo"]["capture-robot-rocket"].ammo_type.target_filter = nil
 data.raw["kill-achievement"]["pest-control"] = nil
 
 -- Remove settings in the menu
+data.raw["resource"]["iron-ore"].hidden = true
 data.raw["resource"]["crude-oil"].hidden = true
 data.raw["planet"]["nauvis"].map_gen_settings.autoplace_controls = {}
 

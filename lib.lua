@@ -10,7 +10,6 @@ function lib.replace_science_pack(tech_name, old_pack, new_pack)
     })
 end
 
-
 ---comment
 ---@param tech_name string
 ---@param mapping table
@@ -26,7 +25,6 @@ function lib.replace_science_packs(tech_name, mapping)
         end
     end
 end
-
 
 ---comment
 ---@param tech_name string
@@ -47,10 +45,41 @@ end
 ---@param name string
 function lib.remove_prerequisites(tech_name, name)
     local tech = assert(data.raw["technology"][tech_name])
+    lib.remove_from_list(tech.prerequisites, name)
+end
 
-    for i = #tech.prerequisites, 1, -1 do
-        if name == tech.prerequisites[i] then
-            table.remove(tech.prerequisites, i)
+---Adds the given pack as a cost to the technology
+---@param tech_name string
+---@param pack_name string
+---@param amount integer?
+function lib.add_science_pack_cost(tech_name, pack_name, amount)
+    local tech = assert(data.raw["technology"][tech_name])
+    tech.unit.ingredients = tech.unit.ingredients or {}
+    table.insert(tech.unit.ingredients, { pack_name, amount or 1 })
+end
+
+---Makes the given technology no longer requires the given science pack
+---@param tech_name string
+---@param pack_name string
+function lib.remove_science_pack_cost(tech_name, pack_name)
+    local tech = assert(data.raw["technology"][tech_name])
+
+    local list = tech.unit.ingredients or {}
+    for i = #list, 1, -1 do
+        if list[i][1] == pack_name then
+            table.remove(list, i)
+            return
+        end
+    end
+end
+
+---comment
+---@param list table
+---@param value any
+function lib.remove_from_list(list, value)
+    for i = #list, 1, -1 do
+        if list[i] == value then
+            table.remove(list, i)
             return
         end
     end

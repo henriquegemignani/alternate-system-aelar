@@ -1,8 +1,15 @@
 
+data.raw["technology"]["planet-discovery-corrundum"].prerequisites = {"asteroid-collector"}
+data.raw["technology"]["planet-discovery-corrundum"].unit.ingredients = {
+    {"automation-science-pack", 1},
+    {"logistic-science-pack", 1},
+    {"chemical-science-pack", 1},
+    {"space-science-pack", 1},
+}
+
 data.raw["item"]["lightning-rod"].hidden = false
 data.raw["recipe"]["lightning-rod"].hidden = false
 data.raw["lightning-attractor"]["lightning-rod"].hidden = false
-
 
 data.raw["recipe"]["calcium-sulfate-bioflux"].hidden = true
 data.raw["recipe"]["calcium-sulfate-egg"].hidden = true

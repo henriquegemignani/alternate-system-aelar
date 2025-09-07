@@ -21,3 +21,22 @@ lib.replace_science_pack("lightning-collector", "electromagnetic-science-pack", 
 
 lib.replace_science_pack("rocket-part-productivity-vulcanus", "metallurgic-science-pack", "electrochemical-science-pack")
 lib.replace_science_pack("rocket-part-productivity-vulcanus-2", "metallurgic-science-pack", "electrochemical-science-pack")
+
+-- Fix too much being essential
+for _, it in pairs {
+    "chalcopyrite-processing",
+    "platinum-processing",
+    "catalytic-chemical-plant",
+    "sulfur-redox1",
+    "sulfur-redox2",
+    "sulfate-processing-1",
+    "sulfate-processing-2",
+    "recrystalization",
+    "calcium-sulfate",
+    "stone-production",
+    "asphalt-and-concrete",
+    "pressure-lab",
+    "sulfonated-plastic",
+} do
+    data.raw["technology"][it].essential = false
+end

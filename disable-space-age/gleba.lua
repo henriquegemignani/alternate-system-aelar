@@ -1,6 +1,5 @@
 -- Disable Gleba
 
-print("hiding items")
 for _, it in pairs {
     "yumako",
     "yumako-mash",
@@ -16,7 +15,6 @@ data.raw["item"]["jellynut-seed"].hidden = true
 data.raw["item"]["yumako-seed"].hidden = true
 data.raw["tool"]["agricultural-science-pack"].hidden = true
 
-print("hiding recipes")
 for _, it in pairs {
     "jellynut-processing",
     "yumako-processing",
@@ -129,6 +127,18 @@ data.raw["tree"]["sunnycomb"].hidden = true
 data.raw["tree"]["cuttlepop"].hidden = true
 data.raw["tree"]["water-cane"].hidden = true
 
+for _, tree in pairs(data.raw["tree"]) do
+    if tree.autoplace and tree.autoplace.control == "gleba_plants" then
+        tree.autoplace = nil
+    end
+end
+
+for _, tree in pairs(data.raw["plant"]) do
+    if tree.autoplace and tree.autoplace.control == "gleba_plants" then
+        tree.autoplace = nil
+    end
+end
+
 -- Enemies
 for _, it in pairs {
     "small-wriggler-pentapod",
@@ -195,7 +205,12 @@ end
 data.raw["noise-expression"]["gleba_enemy_base_radius"] = nil
 data.raw["noise-expression"]["gleba_enemy_base_frequency"] = nil
 data.raw["autoplace-control"]["gleba_enemy_base"] = nil
-data.raw["planet"]["gleba"].map_gen_settings.autoplace_controls.gleba_enemy_base = nil
+data.raw["autoplace-control"]["gleba_stone"].hidden = true
+data.raw["autoplace-control"]["gleba_water"].hidden = true
+data.raw["autoplace-control"]["gleba_plants"].hidden = true
+data.raw["autoplace-control"]["gleba_cliff"].hidden = true
+data.raw["planet"]["gleba"].map_gen_settings.cliff_settings = nil
+data.raw["planet"]["gleba"].map_gen_settings.autoplace_controls = {}
 
 -- Remove the planet!
 data.raw["planet"]["gleba"].hidden = true

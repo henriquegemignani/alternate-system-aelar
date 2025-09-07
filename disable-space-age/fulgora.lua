@@ -87,12 +87,13 @@ for _, it in pairs {
     data.raw["technology"][it].hidden = true
 end
 
--- Modded tech as 
--- -- Remove enemy settings in the menu
--- data.raw["noise-expression"]["gleba_enemy_base_radius"] = nil
--- data.raw["noise-expression"]["gleba_enemy_base_frequency"] = nil
--- data.raw["autoplace-control"]["gleba_enemy_base"] = nil
--- data.raw["planet"]["gleba"].map_gen_settings.autoplace_controls.gleba_enemy_base = nil
+-- Resources
+data.raw["resource"]["scrap"] = nil
+data.raw["autoplace-control"]["scrap"] = nil
+data.raw["autoplace-control"]["fulgora_islands"].hidden = true
+data.raw["planet"]["fulgora"].map_gen_settings.cliff_settings = nil
+data.raw["planet"]["fulgora"].map_gen_settings.autoplace_controls = {}
+data.raw["planet"]["fulgora"].map_gen_settings.autoplace_settings.entity.settings.scrap = nil
 
 -- -- Remove the planet!
 data.raw["planet"]["fulgora"].hidden = true

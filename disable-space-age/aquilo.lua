@@ -86,6 +86,11 @@ end
 data.raw["simple-entity"]["lithium-iceberg-big"].hidden = true
 data.raw["simple-entity"]["lithium-iceberg-huge"].hidden = true
 
+data.raw["autoplace-control"]["lithium_brine"].hidden = true
+data.raw["autoplace-control"]["fluorine_vent"].hidden = true
+data.raw["autoplace-control"]["aquilo_crude_oil"].hidden = true
+data.raw["planet"]["aquilo"].map_gen_settings.autoplace_controls = {}
+
 -- Remove the planet!
 data.raw["resource"]["lithium-brine"].hidden = true
 data.raw["resource"]["fluorine-vent"].hidden = true

@@ -87,11 +87,11 @@ end
 -- Resources
 data.raw["resource"]["sulfuric-acid-geyser"].hidden = true
 
--- Remove enemy settings in the menu
--- data.raw["noise-expression"]["gleba_enemy_base_radius"] = nil
--- data.raw["noise-expression"]["gleba_enemy_base_frequency"] = nil
--- data.raw["autoplace-control"]["gleba_enemy_base"] = nil
--- data.raw["planet"]["gleba"].map_gen_settings.autoplace_controls.gleba_enemy_base = nil
+data.raw["autoplace-control"]["vulcanus_coal"].hidden = true
+data.raw["autoplace-control"]["sulfuric_acid_geyser"].hidden = true
+data.raw["autoplace-control"]["tungsten_ore"].hidden = true
+data.raw["autoplace-control"]["vulcanus_volcanism"].hidden = true
+data.raw["planet"]["vulcanus"].map_gen_settings.autoplace_controls = {}
 
--- -- Remove the planet!
--- data.raw["planet"]["vulcanus"].hidden = true
+-- Remove the planet!
+data.raw["planet"]["vulcanus"].hidden = true

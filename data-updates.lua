@@ -1,4 +1,3 @@
-
 require("disable-space-age.nauvis")
 require("data-updates.corrundum")
 require("data-updates.muluna")
@@ -28,26 +27,52 @@ local function throw_into_limbo(name, prereqs)
     tech.visible_when_disabled = true
 end
 
-throw_into_limbo("asteroid-reprocessing", {"crusher"})
-throw_into_limbo("advanced-asteroid-processing", {"crusher"})
-throw_into_limbo("quality-module-3", {"quality-module-2"})
-throw_into_limbo("efficiency-module-3", {"efficiency-module-2"})
-throw_into_limbo("productivity-module-3", {"productivity-module-2"})
-throw_into_limbo("speed-module-3", {"speed-module-2"})
+throw_into_limbo("asteroid-reprocessing", { "crusher" })
+throw_into_limbo("advanced-asteroid-processing", { "crusher" })
+throw_into_limbo("quality-module-3", { "quality-module-2" })
+throw_into_limbo("efficiency-module-3", { "efficiency-module-2" })
+throw_into_limbo("productivity-module-3", { "productivity-module-2" })
+throw_into_limbo("speed-module-3", { "speed-module-2" })
 throw_into_limbo("quantum-processor", {})
-throw_into_limbo("cryolab", {"quantum-processor", "productivity-module-3"})
+throw_into_limbo("cryolab", { "quantum-processor", "productivity-module-3" })
 throw_into_limbo("muluna-vacuum-heating-tower", {
     "moshine-start-boiler",
     "interstellar-science-pack",
     "efficiency-module-3",
 })
 throw_into_limbo("promethium-science-pack", {})
-throw_into_limbo("carbon-fiber-wall", {"battlefield-science-pack"})
-throw_into_limbo("muluna-cycling-steam-turbine", {"quality-module-3"})
+throw_into_limbo("carbon-fiber-wall", { "battlefield-science-pack" })
+throw_into_limbo("muluna-cycling-steam-turbine", { "quality-module-3" })
 throw_into_limbo("maraxsis-liquid-atmosphere", {})
-throw_into_limbo("maraxsis-research-vessel", {"maraxsis-project-seadragon"})
-throw_into_limbo("cliff-explosives", {"explosives", "military-science-pack"})
+throw_into_limbo("maraxsis-research-vessel", { "maraxsis-project-seadragon" })
+throw_into_limbo("cliff-explosives", { "explosives", "military-science-pack" })
 throw_into_limbo("muluna-advanced-stone-processing", {})
+
+for name, order in pairs {
+    -- Moshine
+    ["multi_ore"] = "a-a-a",
+    ["steam_geyser"] = "a-a-c",
+    ["fulgoran_data_source"] = "a-a-d",
+
+    -- Muluna is unchanged
+
+    -- Corrundum
+    ["calcite"] = "a-g00",
+    ["platinum_ore"] = "a-g01",
+    ["sulfur_ore"] = "a-g02",
+    ["chalcopyrite_ore"] = "a-g03",
+
+    -- Castra    
+    ["copper-ore"] = "a-h00",
+    ["stone"] = "a-h01",
+    ["uranium-ore"] = "a-h02",
+    ["millerite"] = "a-h03",
+    ["gunpowder"] = "a-h04",
+    ["hydrogen-sulfide-vent"] = "a-h05",
+
+} do
+    data.raw["autoplace-control"][name].order = order
+end
 
 
 -- local science_to_remove = {

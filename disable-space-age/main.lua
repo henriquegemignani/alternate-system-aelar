@@ -1,4 +1,4 @@
-require("disable-space-age.lib")
+require("disable-space-age.fulgora")
 require("disable-space-age.gleba")
 require("disable-space-age.aquilo")
 
@@ -21,10 +21,6 @@ require("disable-space-age.aquilo")
 data.raw["capsule"]["jelly"].hidden = false  -- Maraxsis
 data.raw["item"]["biochamber"].hidden = false  -- Maraxsis, TODO recipe
 data.raw["recipe"]["biolubricant"].hidden = false  -- Maraxsis
-
-
-data.raw["technology"]["dry-ice"].hidden = true
-data.raw["technology"]["lithium-battery"].prerequisites = {"battlefield-science-pack"}
 
 -- TODO: move elsewhere
 -- plastic-bar-productivity

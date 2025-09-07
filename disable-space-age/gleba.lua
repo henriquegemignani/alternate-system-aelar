@@ -106,9 +106,28 @@ for _, it in pairs {
     data.raw["tile"][it].hidden = true
 end
 
+data.raw["cliff"]["cliff-gleba"].hidden = true
+
+-- Props
+data.raw["simple-entity"]["copper-stromatolite"].hidden = true
+data.raw["simple-entity"]["iron-stromatolite"].hidden = true
+data.raw["simple-entity"]["big-stomper-shell"].hidden = true
+data.raw["simple-entity"]["medium-stomper-shell"].hidden = true
+data.raw["simple-entity"]["small-stomper-shell"].hidden = true
+
 -- Plants
 data.raw["plant"]["yumako-tree"].hidden = true
 data.raw["plant"]["jellystem"].hidden = true
+data.raw["tree"]["slipstack"].hidden = true
+data.raw["tree"]["funneltrunk"].hidden = true
+data.raw["tree"]["hairyclubnub"].hidden = true
+data.raw["tree"]["teflilly"].hidden = true
+data.raw["tree"]["lickmaw"].hidden = true
+data.raw["tree"]["stingfrond"].hidden = true
+data.raw["tree"]["boompuff"].hidden = true
+data.raw["tree"]["sunnycomb"].hidden = true
+data.raw["tree"]["cuttlepop"].hidden = true
+data.raw["tree"]["water-cane"].hidden = true
 
 -- Enemies
 for _, it in pairs {
@@ -148,7 +167,7 @@ for _, it in pairs {
     "bioflux",
     "bacteria-cultivation",
     "bioflux-processing",
-    -- "agricultural-science-pack",
+    "agricultural-science-pack",
 
     -- Rewards
     "health",
@@ -170,21 +189,6 @@ for _, it in pairs {
     "spidertron",
     "efficiency-module-3",
     "advanced-asteroid-processing",
-} do
-    data.raw["technology"][it].hidden = true
-end
-
--- Modded tech as well
-
-for _, it in pairs {
-    -- Muluna
-    "muluna-fertilized-greenhouses",
-    "muluna-fertilized-greenhouses-vulcanus",
-    "space-chest-muluna",
-
-    -- Corrundum
-    "calcium-sulfate-nutrients",
-    "calcium-sulfate-recovery",
 } do
     data.raw["technology"][it].hidden = true
 end

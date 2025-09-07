@@ -1,22 +1,24 @@
 
-local lib = require("lib")
+require("data-updates.corrundum")
+require("data-updates.muluna")
+require("data-updates.castra")
+require("data-updates.moshine")
+require("data-updates.maraxsis")
 
-local packs_to_remove = {
-    ["agricultural-science-pack"] = true,
-    ["metallurgic-science-pack"] = true,
-    ["electromagnetic-science-pack"] = true,
-}
-
-local science_packs = data.raw["mod-data"]["muluna-interstellar-science-pack-conditions"].data.science_packs --[[@as table]]
-for i = #science_packs, 1, -1 do
-    if packs_to_remove[science_packs[i]] then
-        table.remove(science_packs, i)
-    end
+local function throw_into_limbo(name, prereqs)
+    local tech = data.raw["technology"][name]
+    tech.hidden = false
+    tech.enabled = false
+    tech.prerequisites = prereqs
+    tech.visible_when_disabled = true
 end
 
-lib.replace_science_pack("rocket-part-productivity-gleba", "agricultural-science-pack", "battlefield-science-pack")
-lib.replace_science_pack("rocket-part-productivity-gleba-2", "agricultural-science-pack", "battlefield-science-pack")
-lib.replace_science_pack("rocket-part-productivity-vulcanus", "metallurgic-science-pack", "electrochemical-science-pack")
-lib.replace_science_pack("rocket-part-productivity-vulcanus-2", "metallurgic-science-pack", "electrochemical-science-pack")
--- TODO: moshine, after we add something to research from it
-lib.replace_science_pack("rocket-part-productivity-aquilo", "cryogenic-science-pack", "hydraulic-science-pack")
+throw_into_limbo("advanced-asteroid-processing", {"crusher"})
+throw_into_limbo("quality-module-3", {"quality-module-2"})
+throw_into_limbo("efficiency-module-3", {"efficiency-module-2"})
+throw_into_limbo("quantum-processor", {})
+throw_into_limbo("muluna-vacuum-heating-tower", {
+    "moshine-start-boiler",
+    "interstellar-science-pack",
+    "efficiency-module-3",
+})

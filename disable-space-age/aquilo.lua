@@ -1,18 +1,23 @@
 -- Disable Gleba
 
-print("hiding fluids")
+-- entities
+data.raw["fusion-reactor"]["fusion-reactor"].hidden = true
+data.raw["fusion-generator"]["fusion-generator"].hidden = true
+data.raw["assembling-machine"]["cryogenic-plant"].hidden = true
+
+-- fluids
 for _, it in pairs {
     "fluorine",
     "lithium-brine",
     "ammoniacal-solution",
     "fluoroketone-hot",
     "fluoroketone-cold",
+    "fusion-plasma",
 } do
     data.raw["fluid"][it].hidden = true
 end
 
-
-print("hiding recipes")
+-- recipes
 for _, it in pairs {
     "ammoniacal-solution-separation",
     "solid-fuel-from-ammonia",
@@ -53,6 +58,7 @@ for _, it in pairs {
     "snow-lumpy",
     "snow-patchy",
     "ice-smooth",
+    "ice-platform",
 } do
     data.raw["tile"][it].hidden = true
 end
@@ -63,6 +69,7 @@ for _, it in pairs {
     "planet-discovery-aquilo",
     "lithium-processing",
     "cryogenic-plant",
+    "cryogenic-science-pack",
 
     -- Rewards
     "legendary-quality",
@@ -73,6 +80,10 @@ for _, it in pairs {
 } do
     data.raw["technology"][it].hidden = true
 end
+
+-- Props
+data.raw["simple-entity"]["lithium-iceberg-big"].hidden = true
+data.raw["simple-entity"]["lithium-iceberg-huge"].hidden = true
 
 -- Modded tech as well
 for _, it in pairs {
@@ -86,5 +97,7 @@ end
 -- data.raw["autoplace-control"]["gleba_enemy_base"] = nil
 -- data.raw["planet"]["gleba"].map_gen_settings.autoplace_controls.gleba_enemy_base = nil
 
--- -- Remove the planet!
+-- Remove the planet!
+data.raw["resource"]["lithium-brine"].hidden = true
+data.raw["resource"]["fluorine-vent"].hidden = true
 data.raw["planet"]["aquilo"].hidden = true

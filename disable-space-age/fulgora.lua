@@ -70,6 +70,7 @@ for _, it in pairs {
     "recycling",
     "holmium-processing",
     "electromagnetic-plant",
+    "electromagnetic-science-pack",
 
     -- Rewards
     "mech-armor",
@@ -82,7 +83,6 @@ for _, it in pairs {
     "electric-weapons-damage-4",
     "worker-robots-speed-7",
 } do
-    print(it)
     data.raw["technology"][it].hidden = true
 end
 

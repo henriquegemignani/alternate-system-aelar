@@ -9,3 +9,6 @@ lib.replace_science_pack("rocket-part-productivity-gleba-2", "agricultural-scien
 lib.replace_science_pack("battery-mk3-equipment", "electromagnetic-science-pack", "electrochemical-science-pack")
 lib.replace_science_pack("energy-shield-mk2-equipment", "electromagnetic-science-pack", "electrochemical-science-pack")
 lib.replace_science_pack("jammer-radar", "electromagnetic-science-pack", "electrochemical-science-pack")
+
+
+data.raw["technology"]["uranium-mining"].prerequisites = {"planet-discovery-castra"}

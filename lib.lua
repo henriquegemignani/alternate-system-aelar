@@ -42,5 +42,18 @@ function lib.replace_prerequisites(tech_name, mapping)
     end
 end
 
+---comment
+---@param tech_name string
+---@param name string
+function lib.remove_prerequisites(tech_name, name)
+    local tech = assert(data.raw["technology"][tech_name])
+
+    for i = #tech.prerequisites, 1, -1 do
+        if name == tech.prerequisites[i] then
+            table.remove(tech.prerequisites, i)
+            return
+        end
+    end
+end
 
 return lib

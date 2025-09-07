@@ -176,8 +176,6 @@ for _, it in pairs {
     "asteroid-productivity",
     "refined-flammables-7",
     "stronger-explosives-7",
-    "tree-seeding",
-    "fish-breeding",
     "epic-quality",
     "overgrowth-soil",
     "toolbelt-equipment",

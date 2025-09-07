@@ -1,4 +1,7 @@
 
+data.raw["plant"]["muluna-placed-tree"] = nil
+data.raw["item"]["muluna-sapling"].place_result = nil
+
 for _, it in pairs {
     -- Muluna
     "muluna-fertilized-greenhouses",

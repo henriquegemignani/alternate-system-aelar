@@ -26,3 +26,5 @@ data.raw["technology"]["rocket-part-productivity-fulgora-2"].unit = {
 }
 
 table.insert(data.raw["technology"]["moshine-tech-processing-grid"].prerequisites, "interstellar-science-pack")
+
+lib.replace_science_pack("moshine-tech-hard-drive", "electromagnetic-science-pack", "electrochemical-science-pack")

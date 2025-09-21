@@ -27,6 +27,8 @@ lib.replace_science_pack("lightning-collector", "electromagnetic-science-pack", 
 lib.replace_science_pack("rocket-part-productivity-vulcanus", "metallurgic-science-pack", "electrochemical-science-pack")
 lib.replace_science_pack("rocket-part-productivity-vulcanus-2", "metallurgic-science-pack", "electrochemical-science-pack")
 
+lib.replace_science_pack("platinum-thruster", "metallurgic-science-pack", "battlefield-science-pack")
+
 -- Fix too much being essential
 for _, it in pairs {
     "chalcopyrite-processing",

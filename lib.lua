@@ -18,10 +18,23 @@ function lib.replace_science_packs(tech_name, mapping)
 
     lib.replace_prerequisites(tech_name, mapping)
 
+    local known = {}
     for _, pack in pairs(tech.unit.ingredients) do
+        known[pack[1]] = true
+    end
+
+    for i = #tech.unit.ingredients, 1, -1 do
+        local pack = tech.unit.ingredients[i]
         local new = mapping[pack[1]]
+
+        if known[new] then
+            new = false
+        end
+
         if new then
             pack[1] = new
+        elseif new == false then
+            table.remove(tech.unit.ingredients, i)
         end
     end
 end
@@ -84,5 +97,12 @@ function lib.remove_from_list(list, value)
         end
     end
 end
+
+lib.standard_science_replacement = {
+    ["metallurgic-science-pack"] = "battlefield-science-pack",
+    ["electromagnetic-science-pack"] = "electrochemical-science-pack",
+    ["agricultural-science-pack"] = "interstellar-science-pack",
+    ["cryogenic-science-pack"] = "hydraulic-science-pack",
+}
 
 return lib
